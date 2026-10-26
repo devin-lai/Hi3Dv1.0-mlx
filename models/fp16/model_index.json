@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "fp16",
+  "path_base": "package_root",
+  "format": "hi3d-original-mixed-fp16",
+  "description": "Original mixed FP16/FP32 checkpoints reused by the MLX runtime; shared FP32 VAE. No duplicated FP32 or FP16 model copy.",
+  "status": "available",
+  "requires_custom_runtime": true,
+  "runtime_included": true,
+  "framework_version_recorded": "MLX 0.32.4",
+  "shared_components": [
+    {
+      "path": "model_index.json",
+      "bytes": 224,
+      "sha256": "e24988612733dad44b7354fbfa0b2ef50073ba6ef8d7a677e41023dc2d651386"
+    },
+    {
+      "path": "scheduler/scheduler_config.json",
+      "bytes": 127,
+      "sha256": "40cdcdaaa6149dea32b86a5ff730e581b069ae619d7f580444ef503737fb0bf3"
+    },
+    {
+      "path": "vae/config.json",
+      "bytes": 131,
+      "sha256": "71c629eb188485786227277c7bb5b0fa0a1bfcf07a3d21316174da6b4d04f92f"
+    },
+    {
+      "path": "vae/model.safetensors",
+      "bytes": 376629712,
+      "sha256": "605d207c77f8db0b33c567a5861252f0090cf3c3604dfda1cfee09e8f0b53f3e"
+    },
+    {
+      "path": "transformer_512/config.json",
+      "bytes": 1336,
+      "sha256": "809189b8183c3f44118751322f2cb6fe6fa4ca1922ea16c88cd032970d4bc937"
+    },
+    {
+      "path": "transformer_1024/config.json",
+      "bytes": 1337,
+      "sha256": "2f96d851844e159523cb6cf5e5b29ddbc1354e222a333232612c19e1eaf278c2"
+    }
+  ],
+  "transformers": {
+    "transformer_512": {
+      "path": "transformer_512/model.safetensors",
+      "bytes": 3675679280,
+      "sha256": "8ba88311dccf23463c6e10dd0d3bd5e0c5c35d1608c6f466413b6428b5ad8e56"
+    },
+    "transformer_1024": {
+      "path": "transformer_1024/model.safetensors",
+      "bytes": 3675679280,
+      "sha256": "a2ca5e44dde51cacecd59b42fceeb5f14e75d55e6dd047337752c4e6f281008c"
+    }
+  },
+  "resolution_components": {
+    "512": [
+      "transformer_512"
+    ],
+    "1024": [
+      "transformer_512",
+      "transformer_1024"
+    ],
+    "1536": [
+      "transformer_512",
+      "transformer_1024"
+    ]
+  },
+  "total_checkpoint_bytes": 7727988272,
+  "external_dependencies": [
+    {
+      "id": "facebook/dinov2-large",
+      "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    },
+    {
+      "id": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    }
+  ],
+  "license": "LICENSE",
+  "runtime_repository": "devin-lai/Hi3Dv1.0-mlx"
+}

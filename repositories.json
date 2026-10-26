@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "release": "v1.0.0",
+  "main": {
+    "repo_id": "devin-lai/Hi3Dv1.0-mlx",
+    "role": "inference source, model selector, documentation and visual evidence"
+  },
+  "shared": {
+    "repo_id": "devin-lai/Hi3Dv1.0-mlx-shared",
+    "role": "VAE and shared configurations"
+  },
+  "variants": [
+    {
+      "id": "fp16",
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-fp16"
+    },
+    {
+      "id": "int8",
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-int8"
+    },
+    {
+      "id": "int4",
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-int4"
+    },
+    {
+      "id": "w8a8",
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-w8a8"
+    }
+  ],
+  "results": {
+    "repo_id": "devin-lai/Hi3Dv1.0-mlx-results",
+    "repo_type": "dataset",
+    "optional": true
+  },
+  "conversion_code_included": false,
+  "collection": "https://huggingface.co/collections/devin-lai/hi3d-v10-3d-refinement-on-apple-silicon-6adf317e5c1d7d1672cd06f7",
+  "inference_source": "https://github.com/devin-lai/Hi3Dv1.0-mlx"
+}

@@ -1,0 +1,1 @@
+The dragon reference image is the upstream Hi3D example. The saved coarse mesh was generated using Hunyuan3D-2 mini turbo with 30 steps, octree 256 and seed 0. Both are supplied as a reproducible refinement example. They retain their applicable third-party terms; see LICENSE-Hunyuan3D-2.txt and the project THIRD_PARTY_LICENSES.md. The coarse generator is not bundled.

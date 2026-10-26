@@ -1,0 +1,52 @@
+name: Package and download checks
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Source, wheel and selective downloads
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Check public source and documentation
+        run: python scripts/verify_release.py
+      - name: Install packaging and CPU-only test tools
+        run: python -m pip install build pytest==9.1.1 huggingface-hub==0.36.2
+      - name: Build the distributable
+        run: python -m build
+      - name: Install the wheel without GPU dependencies
+        run: python -m pip install --no-deps dist/*.whl
+      - name: Check installed package data outside the source tree
+        working-directory: /tmp
+        run: |
+          python -I - <<'PY'
+          import json
+          from importlib.resources import files
+          import hi3d_mlx
+          catalog = json.loads(files('hi3d_mlx').joinpath('artifacts.json').read_text())
+          assert set(catalog['variants']) == {'fp16', 'int8', 'int4', 'w8a8'}
+          assert catalog['release'] == 'v1.0.0'
+          assert callable(hi3d_mlx.refine)
+          PY
+      - name: Run hardware-independent downloader regressions
+        env:
+          HF_HUB_OFFLINE: '1'
+        run: python -m pytest -q tests/test_hub.py

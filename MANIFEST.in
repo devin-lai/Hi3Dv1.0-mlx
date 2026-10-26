@@ -1,0 +1,11 @@
+include AUTHORS LICENSE NOTICE THIRD_PARTY_LICENSES.md
+include *.md *.json
+recursive-include assets *.png *.jpg *.gif *.json
+recursive-include benchmarks *.md *.json *.csv
+recursive-include examples *.png *.glb *.txt *.md
+recursive-include models *.json
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include validation *.json
+recursive-include sparc3d *.txt
+global-exclude __pycache__ *.py[cod] .DS_Store

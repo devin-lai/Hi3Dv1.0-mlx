@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Models and selective downloads
+    url: https://huggingface.co/devin-lai/Hi3Dv1.0-mlx
+    about: Choose a model variant and inspect the model cards.
+  - name: Usage, offline setup and troubleshooting
+    url: https://github.com/devin-lai/Hi3Dv1.0-mlx/blob/main/USAGE.md
+    about: Check the hardware and input requirements before opening an issue.

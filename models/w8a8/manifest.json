@@ -1,0 +1,41 @@
+{
+  "files": {
+    "transformer_512": {
+      "source": "transformer_512/model.safetensors",
+      "source_sha256": "8ba88311dccf23463c6e10dd0d3bd5e0c5c35d1608c6f466413b6428b5ad8e56",
+      "output": "transformer_512.safetensors",
+      "output_sha256": "0300f90a68cc2ee32092a5a20b56a8009b710909ed460e0729b4f145494408d7",
+      "output_bytes": 2179285776,
+      "quantized_tensors": 144,
+      "metadata": {
+        "format": "hi3d-w8a8-h64",
+        "rotation": "signed normalized H64",
+        "signs": "numpy.default_rng(314159+width).choice([-1.,1.],width)",
+        "rounding": "nearest even",
+        "weight_scaling": "symmetric per output row, maxabs/127",
+        "MLX_ENABLE_TF32": "0",
+        "mlx": "0.32.4"
+      }
+    },
+    "transformer_1024": {
+      "source": "transformer_1024/model.safetensors",
+      "source_sha256": "a2ca5e44dde51cacecd59b42fceeb5f14e75d55e6dd047337752c4e6f281008c",
+      "output": "transformer_1024.safetensors",
+      "output_sha256": "25945ae51791ea7044d981d35ca558095c0c75423b590b87e10337827be0ba6a",
+      "output_bytes": 2179285776,
+      "quantized_tensors": 144,
+      "metadata": {
+        "format": "hi3d-w8a8-h64",
+        "rotation": "signed normalized H64",
+        "signs": "numpy.default_rng(314159+width).choice([-1.,1.],width)",
+        "rounding": "nearest even",
+        "weight_scaling": "symmetric per output row, maxabs/127",
+        "MLX_ENABLE_TF32": "0",
+        "mlx": "0.32.4"
+      }
+    }
+  },
+  "format": "hi3d-w8a8-h64",
+  "date": "2026-10-25",
+  "mlx": "0.32.4"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "runtime_required": "Hi3D MLX inference runtime from the main project repository",
+  "runtime_bundled": true,
+  "image_encoders": [
+    {
+      "id": "facebook/dinov2-large",
+      "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    },
+    {
+      "id": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    }
+  ],
+  "runtime_entrypoint": "hi3d-mlx refine"
+}

@@ -1,0 +1,23 @@
+name: Share a result or hardware report
+description: Help others understand geometry quality and performance on real Macs.
+title: "[Result] "
+body:
+  - type: textarea
+    id: setup
+    attributes:
+      label: Hardware, software and command
+      description: Chip, memory, macOS, Python/MLX versions, commit, preset, resolution, steps and seed.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result and evidence
+      description: Include a before/after view, metrics JSON, sample count and any concurrent workload. Share only inputs/meshes you may redistribute.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: What worked and what did not?
+      description: Quality changes, failures, memory limitations and unexpected behavior are useful findings.

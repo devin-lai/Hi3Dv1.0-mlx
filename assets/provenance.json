@@ -1,0 +1,15 @@
+{
+  "artwork": "Composed from actual saved renders; no AI-generated output imagery",
+  "benchmark_source": "benchmarks/benchmark-512.json",
+  "chart_runs": [
+    "dragon-512-torch-fp32",
+    "dragon-512-mlx-fp16",
+    "bust-512-torch-fp32",
+    "bust-512-mlx-fp16",
+    "locomotive-512-torch-fp32",
+    "locomotive-512-mlx-fp16"
+  ],
+  "hardware": "Apple M5, 32 GiB",
+  "timing_samples_per_case_and_config": 1,
+  "upstream_benchmark_source": "https://huggingface.co/datasets/devin-lai/Hi3Dv1.0-mlx-results/resolve/v1.0.0/datasets/measurements/benchmark.json"
+}

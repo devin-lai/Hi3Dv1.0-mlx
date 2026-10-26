@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "w8a8",
+  "path_base": "package_root",
+  "format": "hi3d-w8a8-h64",
+  "description": "Experimental signed-H64 native INT8 weights and activations; requires the compatible W8A8 runtime path.",
+  "status": "experimental",
+  "requires_custom_runtime": true,
+  "runtime_included": true,
+  "framework_version_recorded": "MLX 0.32.4",
+  "shared_components": [
+    {
+      "path": "model_index.json",
+      "bytes": 224,
+      "sha256": "e24988612733dad44b7354fbfa0b2ef50073ba6ef8d7a677e41023dc2d651386"
+    },
+    {
+      "path": "scheduler/scheduler_config.json",
+      "bytes": 127,
+      "sha256": "40cdcdaaa6149dea32b86a5ff730e581b069ae619d7f580444ef503737fb0bf3"
+    },
+    {
+      "path": "vae/config.json",
+      "bytes": 131,
+      "sha256": "71c629eb188485786227277c7bb5b0fa0a1bfcf07a3d21316174da6b4d04f92f"
+    },
+    {
+      "path": "vae/model.safetensors",
+      "bytes": 376629712,
+      "sha256": "605d207c77f8db0b33c567a5861252f0090cf3c3604dfda1cfee09e8f0b53f3e"
+    },
+    {
+      "path": "transformer_512/config.json",
+      "bytes": 1336,
+      "sha256": "809189b8183c3f44118751322f2cb6fe6fa4ca1922ea16c88cd032970d4bc937"
+    },
+    {
+      "path": "transformer_1024/config.json",
+      "bytes": 1337,
+      "sha256": "2f96d851844e159523cb6cf5e5b29ddbc1354e222a333232612c19e1eaf278c2"
+    }
+  ],
+  "transformers": {
+    "transformer_512": {
+      "path": "models/w8a8/transformer_512.safetensors",
+      "bytes": 2179285776,
+      "sha256": "0300f90a68cc2ee32092a5a20b56a8009b710909ed460e0729b4f145494408d7"
+    },
+    "transformer_1024": {
+      "path": "models/w8a8/transformer_1024.safetensors",
+      "bytes": 2179285776,
+      "sha256": "25945ae51791ea7044d981d35ca558095c0c75423b590b87e10337827be0ba6a"
+    }
+  },
+  "resolution_components": {
+    "512": [
+      "transformer_512"
+    ],
+    "1024": [
+      "transformer_512",
+      "transformer_1024"
+    ],
+    "1536": [
+      "transformer_512",
+      "transformer_1024"
+    ]
+  },
+  "total_checkpoint_bytes": 4735201264,
+  "external_dependencies": [
+    {
+      "id": "facebook/dinov2-large",
+      "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    },
+    {
+      "id": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "bundled": false,
+      "required_for": "image_conditioning"
+    }
+  ],
+  "license": "LICENSE",
+  "conversion_receipt": "models/w8a8/manifest.json",
+  "runtime_repository": "devin-lai/Hi3Dv1.0-mlx"
+}

@@ -1,0 +1,25 @@
+{
+  "bits": 8,
+  "preferred_group": 64,
+  "mlx": "0.32.4",
+  "files": {
+    "transformer_512": {
+      "source": "transformer_512/model.safetensors",
+      "source_sha256": "8ba88311dccf23463c6e10dd0d3bd5e0c5c35d1608c6f466413b6428b5ad8e56",
+      "output": "transformer_512.safetensors",
+      "output_sha256": "5d9a2d2cfd6ddcf00f5a2e6a68bb08247c5834eab3d825c8638b658694af720d",
+      "output_bytes": 2076009137,
+      "quantized_tensors": 168,
+      "copied_tensors": 344
+    },
+    "transformer_1024": {
+      "source": "transformer_1024/model.safetensors",
+      "source_sha256": "a2ca5e44dde51cacecd59b42fceeb5f14e75d55e6dd047337752c4e6f281008c",
+      "output": "transformer_1024.safetensors",
+      "output_sha256": "3be84f0c4161deac49f06be0bde0e7907d47c1d8bdedbfd9bcb08e6b36cad4c3",
+      "output_bytes": 2076009137,
+      "quantized_tensors": 168,
+      "copied_tensors": 344
+    }
+  }
+}

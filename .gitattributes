@@ -1,0 +1,13 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.glb binary
+
+# Preserve verbatim upstream source and license whitespace.
+src/sparc3d/** whitespace=-blank-at-eol
+examples/LICENSE-Hunyuan3D-2.txt whitespace=-blank-at-eol

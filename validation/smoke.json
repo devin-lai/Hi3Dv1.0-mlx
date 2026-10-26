@@ -1,0 +1,531 @@
+{
+  "date": "2026-10-26",
+  "purpose": "Functional release validation, separate from the historical performance cohort",
+  "runs": [
+    {
+      "preset": "fp16",
+      "variant": "fp16",
+      "resolution": 512,
+      "seed": 0,
+      "steps_per_pass": 25,
+      "attention": "flash",
+      "seconds_excluding_download_and_export": 73.42817458300851,
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "macos": "27.0.1",
+        "memory_bytes": 68719476736
+      },
+      "environment": {
+        "python": "3.12.15",
+        "mlx": "0.32.4"
+      },
+      "output": {
+        "vertices": 499750,
+        "faces": 1000000
+      },
+      "phases": [
+        {
+          "name": "load",
+          "seconds": 1.2125339170452207,
+          "peak_gb": 0.6096051782369614,
+          "end_gb": 0.6096051782369614,
+          "tree_peak_gb": 0.6096051782369614
+        },
+        {
+          "name": "condition",
+          "seconds": 8.969693124992773,
+          "peak_gb": 0.6516279056668282,
+          "end_gb": 0.6516279056668282,
+          "tree_peak_gb": 4.101397581398487
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.22621441702358425,
+          "peak_gb": 0.8728653118014336,
+          "end_gb": 0.6517652571201324,
+          "tree_peak_gb": 0.8823567032814026
+        },
+        {
+          "name": "load",
+          "seconds": 0.17418191698379815,
+          "peak_gb": 4.079746209084988,
+          "end_gb": 4.079746209084988,
+          "tree_peak_gb": 4.079746209084988
+        },
+        {
+          "name": "sample",
+          "seconds": 55.11528074997477,
+          "peak_gb": 6.669010438024998,
+          "end_gb": 5.63441876322031,
+          "tree_peak_gb": 6.678501829504967
+        },
+        {
+          "name": "decode",
+          "seconds": 3.3309185840189457,
+          "peak_gb": 4.072925351560116,
+          "end_gb": 2.6564198583364487,
+          "tree_peak_gb": 4.082416743040085
+        },
+        {
+          "name": "extract",
+          "seconds": 1.946319291018881,
+          "peak_gb": 2.9764579236507416,
+          "end_gb": 0.9224568009376526,
+          "tree_peak_gb": 2.9859493151307106
+        },
+        {
+          "name": "postprocess",
+          "seconds": 2.3779674579855055,
+          "peak_gb": 1.7058132514357567,
+          "end_gb": 1.6560391038656235,
+          "tree_peak_gb": 1.7153046429157257
+        }
+      ],
+      "seconds_by_phase": {
+        "load": 1.3867158340290189,
+        "condition": 8.969693124992773,
+        "voxelize": 0.22621441702358425,
+        "sample": 55.11528074997477,
+        "decode": 3.3309185840189457,
+        "extract": 1.946319291018881,
+        "postprocess": 2.3779674579855055
+      },
+      "peak_footprint_gb": 6.669010438024998,
+      "lifetime_peak_footprint_gb": 6.754551209509373,
+      "peak_process_tree_footprint_gb": 6.678501829504967,
+      "memory_note": "GiB; process tree is a sampled sum of parent and descendants' physical footprints, conservatively counting any shared pages in each process. Legacy peak_footprint_gb is parent-only.",
+      "id": "fp16",
+      "mesh_sha256": "1c125d48befd028ea433665944d5b16b4e40904836ec97736d95f50e8d5d7bb1",
+      "finite_mesh": true,
+      "unit_radius": true,
+      "scope": "Full 25-step 512-cubed smoke inference; no matching fresh FP32 baseline"
+    },
+    {
+      "preset": "int8",
+      "variant": "int8",
+      "resolution": 512,
+      "seed": 0,
+      "steps_per_pass": 25,
+      "attention": "flash",
+      "seconds_excluding_download_and_export": 73.11678000004031,
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "macos": "27.0.1",
+        "memory_bytes": 68719476736
+      },
+      "environment": {
+        "python": "3.12.15",
+        "mlx": "0.32.4"
+      },
+      "output": {
+        "vertices": 499740,
+        "faces": 999999
+      },
+      "phases": [
+        {
+          "name": "load",
+          "seconds": 1.587885707966052,
+          "peak_gb": 0.6104443892836571,
+          "end_gb": 0.6104443892836571,
+          "tree_peak_gb": 0.6104443892836571
+        },
+        {
+          "name": "condition",
+          "seconds": 5.622928333003074,
+          "peak_gb": 0.6523603051900864,
+          "end_gb": 0.6523603051900864,
+          "tree_peak_gb": 4.107134886085987
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.2143122919369489,
+          "peak_gb": 0.862519808113575,
+          "end_gb": 0.6525281742215157,
+          "tree_peak_gb": 0.8719959408044815
+        },
+        {
+          "name": "load",
+          "seconds": 0.11469283397309482,
+          "peak_gb": 2.59335595369339,
+          "end_gb": 2.59335595369339,
+          "tree_peak_gb": 2.59335595369339
+        },
+        {
+          "name": "sample",
+          "seconds": 58.881228125072084,
+          "peak_gb": 5.272876031696796,
+          "end_gb": 4.336337335407734,
+          "tree_peak_gb": 5.282352164387703
+        },
+        {
+          "name": "decode",
+          "seconds": 2.83018099993933,
+          "peak_gb": 3.155214235186577,
+          "end_gb": 2.6505605280399323,
+          "tree_peak_gb": 3.1646903678774834
+        },
+        {
+          "name": "extract",
+          "seconds": 2.112935292068869,
+          "peak_gb": 2.6505452692508698,
+          "end_gb": 0.9214650243520737,
+          "tree_peak_gb": 2.6505452692508698
+        },
+        {
+          "name": "postprocess",
+          "seconds": 1.6788658330915496,
+          "peak_gb": 1.6547574326395988,
+          "end_gb": 1.6547574326395988,
+          "tree_peak_gb": 1.6567872539162636
+        }
+      ],
+      "seconds_by_phase": {
+        "load": 1.7025785419391468,
+        "condition": 5.622928333003074,
+        "voxelize": 0.2143122919369489,
+        "sample": 58.881228125072084,
+        "decode": 2.83018099993933,
+        "extract": 2.112935292068869,
+        "postprocess": 1.6788658330915496
+      },
+      "peak_footprint_gb": 5.272876031696796,
+      "lifetime_peak_footprint_gb": 5.295459039509296,
+      "peak_process_tree_footprint_gb": 5.282352164387703,
+      "memory_note": "GiB; process tree is a sampled sum of parent and descendants' physical footprints, conservatively counting any shared pages in each process. Legacy peak_footprint_gb is parent-only.",
+      "id": "int8",
+      "mesh_sha256": "c947d876e72495c7675485c2a77892440eb354dd422fa2877da22461402059d2",
+      "finite_mesh": true,
+      "unit_radius": true,
+      "scope": "Full 25-step 512-cubed smoke inference; no matching fresh FP32 baseline"
+    },
+    {
+      "preset": "int4",
+      "variant": "int4",
+      "resolution": 512,
+      "seed": 0,
+      "steps_per_pass": 25,
+      "attention": "flash",
+      "seconds_excluding_download_and_export": 78.11156841705088,
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "macos": "27.0.1",
+        "memory_bytes": 68719476736
+      },
+      "environment": {
+        "python": "3.12.15",
+        "mlx": "0.32.4"
+      },
+      "output": {
+        "vertices": 499830,
+        "faces": 1000000
+      },
+      "phases": [
+        {
+          "name": "load",
+          "seconds": 2.097461708006449,
+          "peak_gb": 0.6101544946432114,
+          "end_gb": 0.6101544946432114,
+          "tree_peak_gb": 0.6101544946432114
+        },
+        {
+          "name": "condition",
+          "seconds": 8.098009875044227,
+          "peak_gb": 0.6521009281277657,
+          "end_gb": 0.6521009281277657,
+          "tree_peak_gb": 4.117327801883221
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.29170283407438546,
+          "peak_gb": 0.8808609172701836,
+          "end_gb": 0.6522840559482574,
+          "tree_peak_gb": 0.8903065323829651
+        },
+        {
+          "name": "load",
+          "seconds": 0.12257237499579787,
+          "peak_gb": 1.7987539768218994,
+          "end_gb": 1.7987539768218994,
+          "tree_peak_gb": 1.7987539768218994
+        },
+        {
+          "name": "sample",
+          "seconds": 61.044032374979,
+          "peak_gb": 4.488924868404865,
+          "end_gb": 3.4690426662564278,
+          "tree_peak_gb": 4.498370483517647
+        },
+        {
+          "name": "decode",
+          "seconds": 2.8988343339879066,
+          "peak_gb": 3.0836507380008698,
+          "end_gb": 2.598451964557171,
+          "tree_peak_gb": 3.0930963531136513
+        },
+        {
+          "name": "extract",
+          "seconds": 1.9507782920263708,
+          "peak_gb": 2.598451964557171,
+          "end_gb": 0.9201224967837334,
+          "tree_peak_gb": 2.598451964557171
+        },
+        {
+          "name": "postprocess",
+          "seconds": 1.5359529999550432,
+          "peak_gb": 1.64850153028965,
+          "end_gb": 1.64850153028965,
+          "tree_peak_gb": 1.64850153028965
+        }
+      ],
+      "seconds_by_phase": {
+        "load": 2.220034083002247,
+        "condition": 8.098009875044227,
+        "voxelize": 0.29170283407438546,
+        "sample": 61.044032374979,
+        "decode": 2.8988343339879066,
+        "extract": 1.9507782920263708,
+        "postprocess": 1.5359529999550432
+      },
+      "peak_footprint_gb": 4.488924868404865,
+      "lifetime_peak_footprint_gb": 4.4963406175374985,
+      "peak_process_tree_footprint_gb": 4.498370483517647,
+      "memory_note": "GiB; process tree is a sampled sum of parent and descendants' physical footprints, conservatively counting any shared pages in each process. Legacy peak_footprint_gb is parent-only.",
+      "id": "int4",
+      "mesh_sha256": "777e5961a82c569364004f2c4be1d7c3ada38c7c26cee9fc96cf27b414bc7f68",
+      "finite_mesh": true,
+      "unit_radius": true,
+      "scope": "Full 25-step 512-cubed smoke inference; no matching fresh FP32 baseline"
+    },
+    {
+      "preset": "w8a8",
+      "variant": "w8a8",
+      "resolution": 512,
+      "seed": 0,
+      "steps_per_pass": 25,
+      "attention": "flash",
+      "seconds_excluding_download_and_export": 55.709924582974054,
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "macos": "27.0.1",
+        "memory_bytes": 68719476736
+      },
+      "environment": {
+        "python": "3.12.15",
+        "mlx": "0.32.4"
+      },
+      "output": {
+        "vertices": 499754,
+        "faces": 999999
+      },
+      "phases": [
+        {
+          "name": "load",
+          "seconds": 1.2475322079844773,
+          "peak_gb": 0.6098340600728989,
+          "end_gb": 0.6098340600728989,
+          "tree_peak_gb": 0.6098340600728989
+        },
+        {
+          "name": "condition",
+          "seconds": 5.674166957964189,
+          "peak_gb": 0.6518110111355782,
+          "end_gb": 0.6518110111355782,
+          "tree_peak_gb": 4.11154467612505
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.2114075419958681,
+          "peak_gb": 0.8832107707858086,
+          "end_gb": 0.6519788801670074,
+          "tree_peak_gb": 0.8927021622657776
+        },
+        {
+          "name": "load",
+          "seconds": 0.11341583309695125,
+          "peak_gb": 2.6864804327487946,
+          "end_gb": 2.6864804327487946,
+          "tree_peak_gb": 2.6864804327487946
+        },
+        {
+          "name": "sample",
+          "seconds": 42.02503804094158,
+          "peak_gb": 5.32469516992569,
+          "end_gb": 4.255633890628815,
+          "tree_peak_gb": 5.334186561405659
+        },
+        {
+          "name": "decode",
+          "seconds": 2.949784875032492,
+          "peak_gb": 3.0885640904307365,
+          "end_gb": 2.66142500936985,
+          "tree_peak_gb": 3.0980554819107056
+        },
+        {
+          "name": "extract",
+          "seconds": 1.8621904170140624,
+          "peak_gb": 2.6611656099557877,
+          "end_gb": 0.9261802583932877,
+          "tree_peak_gb": 2.6611656099557877
+        },
+        {
+          "name": "postprocess",
+          "seconds": 1.5495104170404375,
+          "peak_gb": 1.6557495221495628,
+          "end_gb": 1.6557495221495628,
+          "tree_peak_gb": 1.6557495221495628
+        }
+      ],
+      "seconds_by_phase": {
+        "load": 1.3609480410814285,
+        "condition": 5.674166957964189,
+        "voxelize": 0.2114075419958681,
+        "sample": 42.02503804094158,
+        "decode": 2.949784875032492,
+        "extract": 1.8621904170140624,
+        "postprocess": 1.5495104170404375
+      },
+      "peak_footprint_gb": 5.32469516992569,
+      "lifetime_peak_footprint_gb": 5.32469516992569,
+      "peak_process_tree_footprint_gb": 5.334186561405659,
+      "memory_note": "GiB; process tree is a sampled sum of parent and descendants' physical footprints, conservatively counting any shared pages in each process. Legacy peak_footprint_gb is parent-only.",
+      "id": "w8a8",
+      "mesh_sha256": "5546329b0f35e1d497e7c7ffc84fb6fc35261255a6d527ba96b14f7a77f9413f",
+      "finite_mesh": true,
+      "unit_radius": true,
+      "scope": "Full 25-step 512-cubed smoke inference; no matching fresh FP32 baseline"
+    },
+    {
+      "preset": "lean",
+      "variant": "fp16",
+      "resolution": 1024,
+      "seed": 0,
+      "steps_per_pass": 2,
+      "attention": "flash",
+      "seconds_excluding_download_and_export": 75.60483945801388,
+      "hardware": {
+        "chip": "Apple M5 Pro",
+        "macos": "27.0.1",
+        "memory_bytes": 68719476736
+      },
+      "environment": {
+        "python": "3.12.15",
+        "mlx": "0.32.4"
+      },
+      "output": {
+        "vertices": 499457,
+        "faces": 1000000
+      },
+      "phases": [
+        {
+          "name": "load",
+          "seconds": 1.1879496249603108,
+          "peak_gb": 0.258240707218647,
+          "end_gb": 0.258240707218647,
+          "tree_peak_gb": 0.258240707218647
+        },
+        {
+          "name": "condition",
+          "seconds": 5.4469209590461105,
+          "peak_gb": 0.3002634346485138,
+          "end_gb": 0.3002634346485138,
+          "tree_peak_gb": 3.7498348131775856
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.20746016700286418,
+          "peak_gb": 0.5170299932360649,
+          "end_gb": 0.3004618212580681,
+          "tree_peak_gb": 0.5265061259269714
+        },
+        {
+          "name": "load",
+          "seconds": 0.1599399170372635,
+          "peak_gb": 3.7290837094187737,
+          "end_gb": 3.7290837094187737,
+          "tree_peak_gb": 3.7290837094187737
+        },
+        {
+          "name": "sample",
+          "seconds": 4.2789228750625625,
+          "peak_gb": 5.835788756608963,
+          "end_gb": 5.157871276140213,
+          "tree_peak_gb": 5.8452648892998695
+        },
+        {
+          "name": "decode",
+          "seconds": 2.9493002080125734,
+          "peak_gb": 3.964877910912037,
+          "end_gb": 2.3515340387821198,
+          "tree_peak_gb": 3.9743540436029434
+        },
+        {
+          "name": "extract",
+          "seconds": 1.8278854169184342,
+          "peak_gb": 2.0062579810619354,
+          "end_gb": 0.5686511248350143,
+          "tree_peak_gb": 2.015734113752842
+        },
+        {
+          "name": "voxelize",
+          "seconds": 0.7563616660190746,
+          "peak_gb": 0.9944632276892662,
+          "end_gb": 0.3750017210841179,
+          "tree_peak_gb": 1.0039393603801727
+        },
+        {
+          "name": "load",
+          "seconds": 0.14498116704635322,
+          "peak_gb": 3.7825357392430305,
+          "end_gb": 3.7825357392430305,
+          "tree_peak_gb": 3.7825357392430305
+        },
+        {
+          "name": "sample",
+          "seconds": 32.1504938750295,
+          "peak_gb": 6.532627247273922,
+          "end_gb": 4.9203073009848595,
+          "tree_peak_gb": 6.5421033799648285
+        },
+        {
+          "name": "decode",
+          "seconds": 12.190550625091419,
+          "peak_gb": 6.636888720095158,
+          "end_gb": 6.340670540928841,
+          "tree_peak_gb": 6.646364852786064
+        },
+        {
+          "name": "extract",
+          "seconds": 6.982537916046567,
+          "peak_gb": 6.194140367209911,
+          "end_gb": 1.2764306589961052,
+          "tree_peak_gb": 6.203616499900818
+        },
+        {
+          "name": "postprocess",
+          "seconds": 7.08352383307647,
+          "peak_gb": 4.740209177136421,
+          "end_gb": 4.519750192761421,
+          "tree_peak_gb": 4.749685309827328
+        }
+      ],
+      "seconds_by_phase": {
+        "load": 1.4928707090439275,
+        "condition": 5.4469209590461105,
+        "voxelize": 0.9638218330219388,
+        "sample": 36.42941675009206,
+        "decode": 15.139850833103992,
+        "extract": 8.810423332965001,
+        "postprocess": 7.08352383307647
+      },
+      "peak_footprint_gb": 6.636888720095158,
+      "lifetime_peak_footprint_gb": 6.730137012898922,
+      "peak_process_tree_footprint_gb": 6.646364852786064,
+      "memory_note": "GiB; process tree is a sampled sum of parent and descendants' physical footprints, conservatively counting any shared pages in each process. Legacy peak_footprint_gb is parent-only.",
+      "id": "lean-1024",
+      "mesh_sha256": "73ab9aa0c481ae4f2b660ff3db84cc9d83317fad4a610225c6e9ba7fb54f0385",
+      "finite_mesh": true,
+      "unit_radius": true,
+      "scope": "Two-step-per-pass functional multi-pass smoke test; not a quality or performance benchmark"
+    }
+  ]
+}

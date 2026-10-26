@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hi3d-mlx"
+version = "1.0.0"
+description = "Hi3D geometry refinement on Apple silicon with selective model downloads"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "LicenseRef-Hi3D-Open-License-1.0"
+license-files = ["LICENSE", "NOTICE", "AUTHORS", "THIRD_PARTY_LICENSES.md"]
+authors = [{name = "Devin Lai"}]
+dependencies = [
+  "mlx==0.32.4", "mlx-metal==0.32.4", "torch==2.14.1",
+  "torchvision==0.29.1", "numpy==2.5.4", "transformers==4.57.6",
+  "huggingface-hub==0.36.2", "safetensors==0.8.0", "pillow==13.0.0",
+  "trimesh==4.12.2", "pyfqmr==0.5.0", "scipy==1.18.1", "psutil==7.2.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+hi3d-mlx = "hi3d_mlx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/devin-lai/Hi3Dv1.0-mlx"
+Source = "https://github.com/devin-lai/Hi3Dv1.0-mlx"
+Models = "https://huggingface.co/devin-lai/Hi3Dv1.0-mlx"
+Issues = "https://github.com/devin-lai/Hi3Dv1.0-mlx/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hi3d_mlx = ["artifacts.json"]
+sparc3d = ["ops/flexicubes/LICENSE.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

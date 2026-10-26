@@ -1,0 +1,31 @@
+name: Bug report
+description: Report an inference, installation or download problem.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the expected result and the actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Hardware and software
+      description: Apple chip, memory, macOS, Python, MLX and repository version/commit.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Include the command, preset, resolution, seed and steps. Remove tokens and private paths. Share inputs only if you may redistribute them.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or metrics
+      description: Attach the traceback and generated metrics JSON when available. Check them for private data first.

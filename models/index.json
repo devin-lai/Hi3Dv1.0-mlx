@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "package": "Hi3Dv1.0-mlx",
+  "path_base": "package_root",
+  "default_model": "fp16",
+  "default_profile": "fp16",
+  "runtime": {
+    "name": "Hi3D MLX inference runtime",
+    "included": true,
+    "generic_mlx_lm_compatible": false,
+    "entrypoint": "hi3d-mlx refine"
+  },
+  "models": [
+    {
+      "id": "fp16",
+      "index": "models/fp16/model_index.json",
+      "status": "available",
+      "total_checkpoint_bytes": 7727988272,
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-fp16"
+    },
+    {
+      "id": "int8",
+      "index": "models/int8/model_index.json",
+      "status": "available",
+      "total_checkpoint_bytes": 4528647986,
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-int8"
+    },
+    {
+      "id": "int4",
+      "index": "models/int4/model_index.json",
+      "status": "available",
+      "total_checkpoint_bytes": 2822285530,
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-int4"
+    },
+    {
+      "id": "w8a8",
+      "index": "models/w8a8/model_index.json",
+      "status": "experimental",
+      "total_checkpoint_bytes": 4735201264,
+      "repo_id": "devin-lai/Hi3Dv1.0-mlx-w8a8"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "fp32",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float32",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "fp16",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "lean",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "lean-vae16",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "lean-cache",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": true,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "fast",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": true,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "fast-vae16",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": true,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "fast-cache",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": true,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "int8",
+      "model_variant": "int8",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "int4",
+      "model_variant": "int4",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "steps15",
+      "model_variant": "fp16",
+      "steps_per_pass": 15,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "steps10",
+      "model_variant": "fp16",
+      "steps_per_pass": 10,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "turbo",
+      "model_variant": "int8",
+      "steps_per_pass": 10,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "minimal",
+      "model_variant": "int4",
+      "steps_per_pass": 8,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "fp16-vae16",
+      "model_variant": "fp16",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": false,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "w8a8",
+      "model_variant": "w8a8",
+      "steps_per_pass": 25,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float32",
+      "experimental": true,
+      "requires_custom_runtime": true
+    },
+    {
+      "id": "w8a8-turbo",
+      "model_variant": "w8a8",
+      "steps_per_pass": 10,
+      "transformer_compute_dtype": "float16",
+      "vae_dtype": "float16",
+      "experimental": true,
+      "requires_custom_runtime": true
+    }
+  ],
+  "datasets": "https://huggingface.co/datasets/devin-lai/Hi3Dv1.0-mlx-results/resolve/v1.0.0/datasets/index.json",
+  "checksums": "https://huggingface.co/devin-lai/Hi3Dv1.0-mlx/resolve/v1.0.0/SHA256SUMS",
+  "hub": {
+    "main": "devin-lai/Hi3Dv1.0-mlx",
+    "shared": "devin-lai/Hi3Dv1.0-mlx-shared",
+    "results": "devin-lai/Hi3Dv1.0-mlx-results"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "checkpoint_files": 9,
+  "checks": [
+    "all original SHA256 hashes verified separately",
+    "safetensors headers and bounds",
+    "every floating tensor is finite",
+    "affine quantization layout and scale shapes",
+    "W8A8 scale shapes"
+  ],
+  "files": [
+    {
+      "path": "models/int4/transformer_1024.safetensors",
+      "tensors": 848,
+      "tensor_elements": 365755936,
+      "finite": true,
+      "format": "hi3d-mlx-quantized"
+    },
+    {
+      "path": "models/int4/transformer_512.safetensors",
+      "tensors": 848,
+      "tensor_elements": 365755936,
+      "finite": true,
+      "format": "hi3d-mlx-quantized"
+    },
+    {
+      "path": "models/int8/transformer_1024.safetensors",
+      "tensors": 848,
+      "tensor_elements": 579051040,
+      "finite": true,
+      "format": "hi3d-mlx-quantized"
+    },
+    {
+      "path": "models/int8/transformer_512.safetensors",
+      "tensors": 848,
+      "tensor_elements": 579051040,
+      "finite": true,
+      "format": "hi3d-mlx-quantized"
+    },
+    {
+      "path": "models/w8a8/transformer_1024.safetensors",
+      "tensors": 680,
+      "tensor_elements": 1806106144,
+      "finite": true,
+      "format": "hi3d-w8a8-h64"
+    },
+    {
+      "path": "models/w8a8/transformer_512.safetensors",
+      "tensors": 680,
+      "tensor_elements": 1806106144,
+      "finite": true,
+      "format": "hi3d-w8a8-h64"
+    },
+    {
+      "path": "transformer_1024/model.safetensors",
+      "tensors": 512,
+      "tensor_elements": 1805497888,
+      "finite": true,
+      "format": "original"
+    },
+    {
+      "path": "transformer_512/model.safetensors",
+      "tensors": 512,
+      "tensor_elements": 1805497888,
+      "finite": true,
+      "format": "original"
+    },
+    {
+      "path": "vae/model.safetensors",
+      "tensors": 144,
+      "tensor_elements": 94153480,
+      "finite": true,
+      "format": "original"
+    }
+  ]
+}
